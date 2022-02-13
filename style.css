@@ -33,3 +33,22 @@ body {
   flex-wrap: wrap;
   width: 510px;
 }
+
+.key__container button {
+  background-color: #818384;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 58px;
+  margin: 4px;
+  width: 42px;
+}
+
+.key__container button:nth-child(11) {
+  margin-left: 28px;
+}
+
+.key__container button:nth-child(20),
+.key__container button:nth-child(28) {
+  width: 70px;
+}
