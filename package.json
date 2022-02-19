@@ -1,5 +1,16 @@
 {
+  "scripts": {
+    "css": "sass style/style.scss:style/style.css ",
+    "watch": "nodemon -e scss -x 'npm run css'"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2y2son4/wordle-clone-js.git"
+  },
   "dependencies": {
-    "sass": "^1.49.7"
+    "sass": "^1.49.8"
   }
 }
