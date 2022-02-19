@@ -4,7 +4,7 @@ const tileDisplay = document.querySelector('.container__tile');
 const keyboard = document.querySelector('.container__key');
 const messageDisplay = document.querySelector('.container__message');
 
-let wordle = 'AAAAA';
+let wordle = 'SUPER';
 
 // Create KEYBOARD function
 const keys = [
@@ -120,6 +120,7 @@ const deleteLetter = () => {
 const checkRow = () => {
   const guess = guessRows[currentRow].join('');
   if (currentTile === 5) {
+    addColorToTile();
     if (wordle === guess) {
       showMessage('Magnificent!');
       isGameOver = true;
@@ -144,6 +145,32 @@ const showMessage = (message) => {
   messageDisplay.append(messageElement);
 
   setTimeout(() => messageDisplay.removeChild(messageElement), 2000);
+};
+
+const addColorToTile = () => {
+  const rowTiles = document.querySelector(`#guessRow-${currentRow}`).childNodes;
+  rowTiles.forEach((tile, index) => {
+    const dataLetter = tile.getAttribute('data-letter');
+
+    setTimeout(() => {
+      tile.classList.add('flip');
+      if (dataLetter == wordle[index]) {
+        tile.classList.add('overlay-green');
+        addColorToKey(dataLetter, 'overlay-green');
+      } else if (wordle.includes(dataLetter)) {
+        tile.classList.add('overlay-yellow');
+        addColorToKey(dataLetter, 'overlay-yellow');
+      } else {
+        tile.classList.add('overlay-grey');
+        addColorToKey(dataLetter, 'overlay-grey');
+      }
+    }, 200 * index);
+  });
+};
+
+const addColorToKey = (keyLetter, colorStyle) => {
+  const key = document.getElementById(keyLetter);
+  key.classList.add(colorStyle);
 };
 
 createKeyboard();
