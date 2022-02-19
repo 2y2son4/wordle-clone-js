@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+  color: #ffffff;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+body {
+  background-color: #121213;
+  margin: 0;
+  padding: 0;
+}
+
+.container__game {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container__title {
+  border-bottom: solid 1px #3a3a3c;
+  margin-bottom: 24px;
+  text-align: center;
+  width: 510px;
+}
+.container__tile {
+  margin-bottom: 30px;
+  width: 330px;
+}
+.container__tile div {
+  display: flex;
+}
+.container__tile .tile {
+  width: 62px;
+  height: 62px;
+  border: 2px solid #3a3a3c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2px;
+}
+.container__key {
+  display: flex;
+  flex-wrap: wrap;
+  width: 510px;
+}
+.container__key button {
+  background-color: #818384;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 58px;
+  margin: 4px;
+  width: 42px;
+}
+.container__key button:nth-child(11) {
+  margin-left: 28px;
+}
+.container__key button:nth-child(20), .container__key button:nth-child(28) {
+  width: 70px;
+}
+.container__message p {
+  background-color: #818384;
+  border-radius: 10px;
+  margin: 0;
+  padding: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */
